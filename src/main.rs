@@ -6,16 +6,13 @@ mod app;
 mod rsa;
 
 use crossterm::{
-    event::{DisableMouseCapture, EnableMouseCapture, Event, KeyCode},
+    event::{DisableMouseCapture, EnableMouseCapture},
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
 use std::{error::Error, io};
 use tui::{
-    backend::{Backend, CrosstermBackend},
-    layout::{Constraint, Direction, Layout, Rect, Alignment},
-    widgets::{Block, Borders, self, ListItem, Paragraph, Wrap, List, canvas::{self, Canvas, Shape, Rectangle}},
-    Frame, Terminal, text::{Spans, Span}, style::{Style, Color, Modifier},
+    backend::{Backend, CrosstermBackend}, Terminal,
 };
 
 fn main() -> Result<(), Box<dyn Error>> {

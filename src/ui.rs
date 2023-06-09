@@ -1,17 +1,14 @@
-use std::fmt::format;
+
 
 use crate::app::App;
-use num::bigint::ToBigInt;
+
 use tui::{
     backend::Backend,
-    layout::{Constraint, Direction, Layout, Rect},
-    style::{Color, Modifier, Style},
-    symbols,
-    text::{Span, Spans},
-    widgets::canvas::{Canvas, Line, Map, MapResolution, Rectangle},
+    layout::{Constraint, Direction, Layout},
+    style::{Color, Style},
     widgets::{
-        Axis, BarChart, Block, Borders, Cell, Chart, Dataset, Gauge, LineGauge, List, ListItem,
-        Paragraph, Row, Sparkline, Table, Tabs, Wrap,
+        Block, Borders,
+        Paragraph,
     },
     Frame,
 };

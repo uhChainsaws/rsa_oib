@@ -14,10 +14,10 @@ use tui::{
 };
 
 pub fn draw<B: Backend>(f: &mut Frame<B>, app: &mut App) {
-    let input_style = Style::default().bg(Color::Rgb(236, 229, 199));
-    let blankk_style = Style::default().bg(Color::Rgb(205, 194, 174));
-    let public_style = Style::default().bg(Color::Rgb(194, 222, 220));
-    let private_style = Style::default().bg(Color::Rgb(17, 106, 123));
+    let input_style = Style::default().bg(Color::Rgb(236, 229, 199)).fg(Color::Rgb(17, 106, 123));
+    let blankk_style = Style::default().bg(Color::Rgb(205, 194, 174)).fg(Color::Rgb(17, 106, 123));
+    let public_style = Style::default().bg(Color::Rgb(194, 222, 220)).fg(Color::Rgb(17, 106, 123));
+    let private_style = Style::default().bg(Color::Rgb(17, 106, 123)).fg(Color::Rgb(194, 222, 220));
     let root = Layout::default()
         .direction(Direction::Horizontal)
         .constraints([
@@ -81,16 +81,16 @@ pub fn draw<B: Backend>(f: &mut Frame<B>, app: &mut App) {
     let qp_chunks = Layout::default()
         .direction(Direction::Horizontal)
         .constraints([
-            Constraint::Percentage(45),
-            Constraint::Percentage(10),
-            Constraint::Percentage(45),
+            Constraint::Percentage(50),
+            // Constraint::Percentage(10),
+            Constraint::Percentage(50),
         ].as_ref())
         .split(chunks[1]);
 
     
     f.render_widget(p_text, qp_chunks[0]);
     f.render_widget(Block::default().style(blankk_style), qp_chunks[1]);
-    f.render_widget(q_text, qp_chunks[2]);
+    f.render_widget(q_text, qp_chunks[1]);
 
     let n_text = Paragraph::new(
         {

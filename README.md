@@ -1,6 +1,6 @@
 # RSA in rust 
 laba for "ОИБ"\
-by Kravchuk Vladislav
+by Kravchuk Vladislav N3147 ISU:368372
 -------------------
 \
 ui usage:

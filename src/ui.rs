@@ -137,8 +137,6 @@ pub fn draw<B: Backend>(f: &mut Frame<B>, app: &mut App) {
             String::from("...")
         }
     };
-    // let texxxt = "oof";
-
     let results = Paragraph::new(texxxt).alignment(tui::layout::Alignment::Center);
     f.render_widget(results, chunks[4])
 }
